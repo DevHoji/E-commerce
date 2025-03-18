@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart - E-Commerce Shop</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <a href="/" class="logo">E-Shop</a>
+      
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/products">Products</a></li>
+          <li><a href="/category/1">Electronics</a></li>
+          <li><a href="/category/2">Clothing</a></li>
+          <li><a href="/category/3">Home & Kitchen</a></li>
+        </ul>
+      </nav>
+      
+      <div class="auth-links" id="auth-links">
+        <!-- This will be dynamically updated by JavaScript -->
+      </div>
+    </div>
+  </header>
+  
+  <main>
+    <div class="container">
+      <div class="cart-container" id="cart-container">
+        <h1 class="text-center mb-20">Your Cart</h1>
+        <!-- Cart items will be loaded here -->
+        <div id="cart-items"></div>
+        
+        <div class="cart-summary" id="cart-summary" style="display: none;">
+          <div class="cart-total" id="cart-total"></div>
+          <div class="cart-actions">
+            <a href="/products" class="btn btn-secondary">Continue Shopping</a>
+            <a href="/checkout" class="btn" id="checkout-btn">Proceed to Checkout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <p class="text-center">&copy; 2025 E-Shop. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script type="module" src="/js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - ShopSmart</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="/" class="logo">ShopSmart</a>
+      
+      <nav class="navbar">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/categories">Categories</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li>
+            <a href="/cart.html" class="cart-icon">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <h1 class="page-title">Checkout</h1>
+
+    <!-- Checkout progress indicator -->
+    <div class="checkout-progress">
+      <div class="progress-step completed">
+        <div class="step-number">1</div>
+        <div class="step-label">Shopping Cart</div>
+      </div>
+      <div class="progress-step active">
+        <div class="step-number">2</div>
+        <div class="step-label">Checkout</div>
+      </div>
+      <div class="progress-step">
+        <div class="step-number">3</div>
+        <div class="step-label">Confirmation</div>
+      </div>
+    </div>
+
+    <!-- Checkout Form -->
+    <form class="checkout-form">
+      <div class="form-section">
+        <h2>Contact Information</h2>
+        <div class="form-group">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" id="email" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" id="phone" class="form-input" required>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h2>Shipping Address</h2>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" id="firstName" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" id="lastName" class="form-input" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="address" class="form-label">Street Address</label>
+          <input type="text" id="address" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label for="apt" class="form-label">Apartment, Suite, etc. (optional)</label>
+          <input type="text" id="apt" class="form-input">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="city" class="form-label">City</label>
+            <input type="text" id="city" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label for="state" class="form-label">State/Province</label>
+            <select id="state" class="form-input" required>
+              <option value="">Select State</option>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <!-- More states would be added here -->
+              <option value="WY">Wyoming</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="zip" class="form-label">ZIP/Postal Code</label>
+            <input type="text" id="zip" class="form-input" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="country" class="form-label">Country</label>
+          <select id="country" class="form-input" required>
+            <option value="US">United States</option>
+            <option value="CA">Canada</option>
+            <option value="UK">United Kingdom</option>
+            <!-- More countries would be added here -->
+          </select>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h2>Payment Information</h2>
+        <div class="payment-methods-selection">
+          <div class="payment-method active">
+            <input type="radio" id="creditCard" name="paymentMethod" value="creditCard" checked>
+            <label for="creditCard">Credit Card</label>
+          </div>
+          <div class="payment-method">
+            <input type="radio" id="paypal" name="paymentMethod" value="paypal">
+            <label for="paypal">PayPal</label>
+          </div>
+        </div>
+
+        <div class="credit-card-form">
+          <div class="form-group">
+            <label for="cardName" class="form-label">Name on Card</label>
+            <input type="text" id="cardName" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label for="cardNumber" class="form-label">Card Number</label>
+            <input type="text" id="cardNumber" class="form-input" placeholder="1234 5678 9012 3456" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="expiry" class="form-label">Expiration Date</label>
+              <input type="text" id="expiry" class="form-input" placeholder="MM/YY" required>
+            </div>
+            <div class="form-group">
+              <label for="cvv" class="form-label">CVV</label>
+              <input type="text" id="cvv" class="form-input" placeholder="123" required>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section order-summary">
+        <h2>Order Summary</h2>
+        <div class="cart-summary">
+          <div class="cart-items-summary">
+            <!-- Cart summary items will be dynamically generated -->
+            <div class="cart-item-summary">
+              <span class="item-name">Wireless Earbuds</span>
+              <span class="item-price">$49.99</span>
+            </div>
+            <div class="cart-item-summary">
+              <span class="item-name">Smart Watch</span>
+              <span class="item-price">$99.99</span>
+            </div>
+          </div>
+          
+          <div class="cart-subtotal">
+            <span>Subtotal:</span>
+            <span>$149.98</span>
+          </div>
+          
+          <div class="cart-shipping">
+            <span>Shipping:</span>
+            <span>Free</span>
+          </div>
+          
+          <div class="cart-tax">
+            <span>Estimated Tax:</span>
+            <span>$12.00</span>
+          </div>
+          
+          <div class="cart-total">
+            <span>Total:</span>
+            <span>$161.98</span>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn place-order-btn">Place Order</button>
+        
+        <div class="secure-checkout">
+          <i class="fas fa-lock"></i> Secure Checkout
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="/categories/new-arrivals">New Arrivals</a></li>
+            <li><a href="/categories/best-sellers">Best Sellers</a></li>
+            <li><a href="/categories/sale">Sale</a></li>
+            <li><a href="/categories">All Categories</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Customer Service</h3>
+          <ul>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/shipping">Shipping Information</a></li>
+            <li><a href="/returns">Returns & Exchanges</a></li>
+            <li><a href="/faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>About Us</h3>
+          <ul>
+            <li><a href="/about">Our Story</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>&copy; 2025 ShopSmart. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/cart.js"></script>
+  <script>
+    // Checkout page specific JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+      // Payment method selection
+      const paymentMethods = document.querySelectorAll('.payment-method');
+      const creditCardForm = document.querySelector('.credit-card-form');
+      
+      paymentMethods.forEach(method => {
+        method.addEventListener('click', function() {
+          // Remove active class from all methods
+          paymentMethods.forEach(m => m.classList.remove('active'));
+          
+          // Add active class to clicked method
+          this.classList.add('active');
+          
+          // Check the radio button
+          this.querySelector('input[type="radio"]').checked = true;
+          
+          // Show/hide credit card form based on selection
+          if (this.querySelector('input').value === 'creditCard') {
+            creditCardForm.style.display = 'block';
+          } else {
+            creditCardForm.style.display = 'none';
+          }
+        });
+      });
+      
+      // Form validation (basic example)
+      const checkoutForm = document.querySelector('.checkout-form');
+      
+      checkoutForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Basic validation example
+        let isValid = true;
+        const requiredInputs = this.querySelectorAll('[required]');
+        
+        requiredInputs.forEach(input => {
+          if (!input.value.trim()) {
+            isValid = false;
+            input.classList.add('error');
+          } else {
+            input.classList.remove('error');
+          }
+        });
+        
+        if (isValid) {
+          // Here you would typically send the order to your backend
+          // For demo purposes, we'll just redirect to the order success page
+          window.location.href = '/order-success.html';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
